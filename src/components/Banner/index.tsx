@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../assets/images/banner.jpg";
+import bannerImage from "../../assets/images/banner1.png";
 function Banner() {
   return (
     <div className=" relative">
@@ -9,7 +9,7 @@ function Banner() {
         className=" w-full h-full"
       />
       <div className=" w-full h-full absolute top-0 right-0 bottom-0 left-0  bg-gradient-to-b from-transparent to-[#01152B]"></div>
-      <div className=" absolute bottom-24 left-12 z-50 p-6 text-white w-[50%] tracking-wide">
+      <div className=" absolute bottom-18 left-12 z-50 p-6 text-white w-[50%] tracking-wide">
         <div className=" flex items-center gap-2">
           <div className="  relative ">
             <div className=" h-2 w-2 inset-0  m-auto absolute rounded-full bg-red-400"></div>
