@@ -9,7 +9,7 @@ function Home() {
       <Slider   title='Live Matches' link='/all' data={[]}/>
       <Slider  title='Today Matches' link='/all' data={[]}/>
       <Slider  title='TODAY HIGHLIGHTS' link='/all' data={[]}/>
-      <CategorySlider  title='TODAY HIGHLIGHTS' link='/all' data={[]}/>
+      <CategorySlider  title='browse by category' link='/all' data={[]}/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ export default function Footer() {
          <div className="logo">
         <img src={logo} alt="logo not found" className=' w-24 h-24' />
         </div>
-        <div className=' text-[14px] tracking-wider'>
+        <div className=' text-[14px] hidden md:block tracking-wider'>
         © 2025 Lift Media. All Rights Reserved. 
         </div>
 
