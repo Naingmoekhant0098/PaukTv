@@ -9,6 +9,7 @@ import { FaRegListAlt } from "react-icons/fa";
 import { LuListTodo } from "react-icons/lu";
 import { BsNewspaper } from "react-icons/bs";
 import { MdLiveTv } from "react-icons/md";
+import { Link } from "react-router-dom";
 function NavBar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
@@ -38,20 +39,20 @@ function NavBar() {
   return (
     <div className="">
       <div className={`navBar flex items-center  transition-all duration-300 fixed left-0 right-0 to-0 z-50  justify-between p-1 px-3 md:px-12 ${showNavbar}`}>
-        <div className="logo">
+        <Link to={'/'} className="logo">
           <img
             src={logo}
             alt="logo not found"
             className=" w-18 md:w-24 h-18 md:h-24"
           />
-        </div>
+        </Link>
 
         <div className=" block md:hidden lg:hidden" onClick={toggleDrawer}>
           <FaBars size={24} className=" mr-2" />
         </div>
         <div className=" hidden md:block ">
           <div className=" flex flex-row items-center gap-10 mr-6">
-            <div className=" cursor-pointer nav">Home</div>
+            <Link to={'/'} className=" cursor-pointer nav">Home</Link>
             <div className=" cursor-pointer nav">Matches</div>
             <div  className=" cursor-pointer nav">Highlights</div>
             <div  className=" cursor-pointer nav">Channels</div>

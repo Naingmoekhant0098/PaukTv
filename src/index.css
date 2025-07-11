@@ -35,11 +35,7 @@ body{
 .hideNav{
   transform: translateY(-100px)!important;
 }
-.topNav{
-  /* background-color: rgba(241, 225, 225, 0.041); */
-  /* backdrop-filter: blur(5px);    */
-  
-}
+ 
 
 .nav:hover {
   color: #F65311;
@@ -63,3 +59,61 @@ body{
 .nav:hover::after {
   width: 100%;
 }
+
+.main-fader{
+  width:100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  background-color: #01152B;
+  .loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    svg {
+      height: 150px;
+      display: block;
+      margin: 0 auto;
+      path {
+        animation-duration: 1s;
+        animation-name: pulse;
+        animation-iteration-count: infinite;
+        color: #F65311;
+
+        &.path-7 {
+          animation-delay: -1s
+        }
+        &.path-6 {
+          animation-delay: -.875s
+        }
+        &.path-5 {
+          animation-delay: -.75s
+        }
+        &.path-4 {
+          animation-delay: -.625s
+        }
+        &.path-3 {
+          animation-delay: -.5s
+        }
+        &.path-2 {
+          animation-delay: -.375s
+        }
+        &.path-1 {
+          animation-delay: -.25s
+        }
+        &.path-0 {
+          animation-delay: -.125s
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes pulse {
+  0%     { opacity: .1; }
+  30%    { opacity: .8; }
+  100%   { opacity: .1; }
+}
+
