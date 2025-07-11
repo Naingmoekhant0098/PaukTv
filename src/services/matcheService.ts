@@ -8,5 +8,14 @@ export default {
         console.log(error)
 
       }
+    },
+    fetchHighlights : async(params : any)=>{
+      try {
+        const response = await api.get(`/highlights`,{params});
+        return response.data
+      } catch (error) {
+        console.log(error)
+
+      }
     }
 }

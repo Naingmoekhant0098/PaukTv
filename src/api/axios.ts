@@ -3,7 +3,7 @@ const apiHost = import.meta.env.VITE_API_URL;
 console.log(apiHost)
 const api = axios.create({
     baseURL: apiHost,
-    timeout: 10000,
+    timeout: 15000,
     headers: {
         "Content-Type": "application/json",
     },

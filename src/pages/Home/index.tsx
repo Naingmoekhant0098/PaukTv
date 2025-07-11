@@ -7,8 +7,9 @@ import { useQuery } from '@tanstack/react-query'
 import matcheService from '../../services/matcheService'
 function Home() {
   const {data,isLoading} = useQuery({ queryKey: ['matches'], queryFn: matcheService.fetchMatches })
+  const {data:hightlightData,isLoading : hightLightLoading} = useQuery({ queryKey: ['hightLights'], queryFn: matcheService.fetchHighlights })
   
-  if(isLoading) {
+  if(isLoading && hightLightLoading) {
     return <Preloader />
   }
   return (
@@ -17,7 +18,7 @@ function Home() {
       <Banner />
       <Slider   title='Live Matches' link='/all' data={data?.liveMatches} isSwitch={false}/>
       <Slider  title='Today Matches' link='/all' data={{today : data?.today , tomorrow : data?.tomorrow}} isSwitch={true}/>
-      <Slider  title='TODAY HIGHLIGHTS' link='/all' data={data?.today} isSwitch={false}/>
+      <Slider  title='HIGHLIGHTS' link='/all' data={hightlightData} isSwitch={false}/>
       <CategorySlider  title='browse by category' link='/all' data={[]}/>
     </div>
     // tomorrow

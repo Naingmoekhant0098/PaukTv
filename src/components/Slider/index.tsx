@@ -45,7 +45,15 @@ function Slider({ title, link, data, isSwitch}: sliderProps) {
 
       <div className=" mt-4 md:mt-6 relative">
         <div  className="hidden md:block absolute top-0  right-0 z-40 h-full w-10 bg-gradient-to-r from-transparent to-[#01152B]"></div>
-       
+       {
+        !isSwitch && data?.length === 0 && <div>Matches Not Found !</div>
+       }
+       {
+        isSwitch && data?.today?.length === 0 && <div>Matches Not Found !</div>
+       }
+       {
+       isSwitch && data?.tomorrow?.length === 0 && <div>Matches Not Found !</div>
+       }
         {
           <Swiper
             slidesPerView={1.2}

@@ -17,9 +17,17 @@ interface itemProps {
 
 function LiveCard({item} : itemProps) {
   const navigate = useNavigate();
-  const date = new Date(item?.match_time * 1000);
+  function isUnixTimestamp(value: any): boolean {
+    return value > 0 && value.toString().length === 10;
+  }
+  function normalizeToISO(dateInput: any): string {
+    if (isUnixTimestamp(dateInput)) {
+      return moment.unix(dateInput).format('LLL');
+    }
+    return moment(dateInput).format('LLL');
+  }
   return (
-    <div className="rounded-[10px] border border-white/5 bg-white/5 backdrop-blur-[0.6px] w-[250px] h-[290px] md:w-[294px] p-4 md:p-6">
+    <div className="rounded-[10px] border border-white/5 bg-white/5 backdrop-blur-[0.6px] w-[250px] min-h-[220px] md:min-h-[260px] md:w-[294px] p-4 md:p-6">
       <div className=" flex items-center justify-between">
         <div className=" font-medium">{item && item?.league_name}</div>
        
@@ -62,11 +70,12 @@ function LiveCard({item} : itemProps) {
       </div>
 
       {
-          item && item.match_status==='live' ? <div onClick={()=>navigate('/match-details', { state: item })} className=" border p-3 px-8   rounded-full  text-center mt-6 border-gray-400 text-gray-300 text-[13px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
+          item && item.match_status==='live' ? <div onClick={()=>navigate('/match-details', { state: item })} className=" border p-3 px-8   rounded-full  text-center mt-2 md:mt-6 border-gray-400 text-gray-300 text-[13px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
           Watch Now
         </div>
         :
-        <div className=" text-center mt-6 text-[14px] opacity-80">Kickoff : {moment(date.toLocaleString()).format('LLL')}</div>
+      
+        <div className=" text-center mt-2 md:mt-6 text-[14px] opacity-80">Kickoff : {normalizeToISO(item.match_time)}</div>
           }
 
       
