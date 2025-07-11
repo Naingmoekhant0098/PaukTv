@@ -19,3 +19,47 @@ body{
     font-style: normal;
   
 }
+.nav {
+  position: relative;
+  transition: all 0.3s ease;
+ 
+}
+
+.showNav{
+  background-color: rgba(0, 0, 0, 0.332) !important;
+  backdrop-filter: blur(5px);   
+  /* background: linear-gradient(to right, rgba(25, 25, 35, 0.398), rgba(70, 40, 50, 0.291));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+}
+.hideNav{
+  transform: translateY(-100px)!important;
+}
+.topNav{
+  /* background-color: rgba(241, 225, 225, 0.041); */
+  /* backdrop-filter: blur(5px);    */
+  
+}
+
+.nav:hover {
+  color: #F65311;
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  z-index: 60;
+ 
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: red;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.nav:hover::after {
+  width: 100%;
+}

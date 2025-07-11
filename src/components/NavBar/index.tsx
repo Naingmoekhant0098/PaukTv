@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { FaBars } from "react-icons/fa6";
 import Drawer from "react-modern-drawer";
@@ -14,9 +14,30 @@ function NavBar() {
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+  const [showNavbar, setShowNavBar] = useState("topNav");
+  const [scrollY, setScrollY] = useState(0);
+
+  const constrolScroll = () => {
+    if (window.scrollY > 200) {
+      if (window.scrollY > scrollY) {
+        setShowNavBar("hideNav");
+      } else {
+        setShowNavBar("showNav");
+      }
+      setScrollY(window.scrollY);
+    } else {
+      setShowNavBar("topNav");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", constrolScroll);
+  }, [scrollY]);
+
+
   return (
     <div className="">
-      <div className=" flex items-center  fixed left-0 right-0 to-0 z-50  justify-between p-2 px-3 md:px-12">
+      <div className={`navBar flex items-center  transition-all duration-300 fixed left-0 right-0 to-0 z-50  justify-between p-1 px-3 md:px-12 ${showNavbar}`}>
         <div className="logo">
           <img
             src={logo}
@@ -28,13 +49,13 @@ function NavBar() {
         <div className=" block md:hidden lg:hidden" onClick={toggleDrawer}>
           <FaBars size={24} className=" mr-2" />
         </div>
-        <div className=" hidden md:block">
-          <div className=" flex flex-row items-center gap-10 ">
-            <div>Home</div>
-            <div>Matches</div>
-            <div>Highlights</div>
-            <div>Channels</div>
-            <div>News</div>
+        <div className=" hidden md:block ">
+          <div className=" flex flex-row items-center gap-10 mr-6">
+            <div className=" cursor-pointer nav">Home</div>
+            <div className=" cursor-pointer nav">Matches</div>
+            <div  className=" cursor-pointer nav">Highlights</div>
+            <div  className=" cursor-pointer nav">Channels</div>
+            <div  className=" cursor-pointer nav">News</div>
           </div>
         </div>
       </div>
