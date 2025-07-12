@@ -11,13 +11,6 @@ interface sliderProps {
 }
 
 function Slider({ title, link, data = [] }: sliderProps) {
-  const dummy_data = [
-    { id: 1, title: "Item 1", desc: "Description 1" },
-    { id: 2, title: "Item 2", desc: "Description 2" },
-    { id: 3, title: "Item 3", desc: "Description 3" },
-    { id: 4, title: "Item 4", desc: "Description 4" },
-    { id: 5, title: "Item 5", desc: "Description 5" },
-  ];
 
   return (
     <div className=" mx-4 md:mx-10 lg:mx-20 mt-6 md:mt-10 ">
@@ -35,24 +28,6 @@ function Slider({ title, link, data = [] }: sliderProps) {
 
       <div className="mt-4 md:mt-6">
         {
-          //    <Swiper
-          //    slidesPerView={1.8}
-          //    spaceBetween={20}
-          //    pagination={{ clickable: true }}
-          //    breakpoints={{
-          //      640: { slidesPerView: 2 },
-          //      768: { slidesPerView: 2.6 },
-          //      1024: { slidesPerView: 4.9},
-          //    }}
-          //    className="py-6"
-          //  >
-          //    {dummy_data.map((item :any) => (
-          //      <SwiperSlide key={item.id}>
-          //       <CategoryCard/>
-          //      </SwiperSlide>
-          //    ))}
-          //  </Swiper>
-
           <Swiper
             slidesPerView={1.2}
             spaceBetween={20}
@@ -73,15 +48,15 @@ function Slider({ title, link, data = [] }: sliderProps) {
               820: { slidesPerView: 2.8 },
               1024: { slidesPerView: 3.4 }, // Small desktops/laptops
               1280: { slidesPerView: 4.2 }, // Medium desktops
-              1440: { slidesPerView: 5 }, // Large desktops
+              1440: { slidesPerView: 6 }, // Large desktops
               1920: { slidesPerView: 6 }, // Full HD and wider
               2560: { slidesPerView: 7 }, // 2K+ displays
             }}
             className="py-6"
           >
-            {dummy_data.map((item: any) => (
-              <SwiperSlide key={item.id}>
-                <CategoryCard />
+            {data?.length>0 && data?.map((item: any) => (
+              <SwiperSlide key={item._id}>
+                <CategoryCard  item={item}/>
               </SwiperSlide>
             ))}
           </Swiper>

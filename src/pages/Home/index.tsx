@@ -8,7 +8,7 @@ import matcheService from '../../services/matcheService'
 function Home() {
   const {data,isLoading} = useQuery({ queryKey: ['matches'], queryFn: matcheService.fetchMatches })
   const {data:hightlightData,isLoading : hightLightLoading} = useQuery({ queryKey: ['hightLights'], queryFn: matcheService.fetchHighlights })
-  
+  const {data:categoryData,isLoading : categoryLoading} = useQuery({ queryKey: ['channels'], queryFn: matcheService.fetchChannel })
   if(isLoading && hightLightLoading) {
     return <Preloader />
   }
@@ -19,7 +19,7 @@ function Home() {
       <Slider   title='Live Matches' link='/all' data={data?.liveMatches} isSwitch={false}/>
       <Slider  title='Today Matches' link='/all' data={{today : data?.today , tomorrow : data?.tomorrow}} isSwitch={true}/>
       <Slider  title='HIGHLIGHTS' link='/all' data={hightlightData} isSwitch={false}/>
-      <CategorySlider  title='browse by category' link='/all' data={[]}/>
+      <CategorySlider  title='browse by category' data={categoryData} link='/all' />
     </div>
     // tomorrow
   )

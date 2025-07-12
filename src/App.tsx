@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Detail from './pages/Detail';
 import LivePlay from './pages/LivePlay';
 import ScrollToTop from './components/ScrollToTop/index';
+import Channels from './pages/Channels';
  
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
      <Route path="/live-match" element={
       <MainLayout>
         <LivePlay />
+      </MainLayout>
+    } />
+     <Route path="/channel-posts" element={
+      <MainLayout>
+        <Channels />
       </MainLayout>
     } />
      
