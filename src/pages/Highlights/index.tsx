@@ -3,10 +3,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import matcheService from '../../services/matcheService';
 import MatchCard from '../../components/Cards/MatchCard';
+import Preloader from '../../components/Preloader';
 
 function Highlights() {
   const {data,isLoading} = useQuery({ queryKey: ['hightLights'], queryFn: matcheService.fetchHighlights });
   
+  if(isLoading ) {
+    return <Preloader />
+  }
   return (
     <div className=" pt-22 md:pt-30  mx-5 md:mx-10 lg:mx-20">
     <nav className="text-white font-bold text-sm md:text-md " aria-label="Breadcrumb">

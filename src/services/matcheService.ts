@@ -19,6 +19,16 @@ export default {
       }
      
     },
+    fetchNewsById :async(id : any)=>{
+      try {
+        const response = await api.get(`/news/${id}`);
+        return response.data
+      } catch (error) {
+        console.log(error)
+
+      }
+     
+    },
     fetchNews : async(params : any)=>{
       try {
         const response = await api.get(`/news`,{params});

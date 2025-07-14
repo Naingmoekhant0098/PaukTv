@@ -20,7 +20,7 @@ const navigate = useNavigate();
   return (
     <div
      
-      className="group rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm w-full cursor-pointer min-h-[130px] md:min-h-[170px] md:w-[300px] transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/20"
+      className="group rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 backdrop-blur-sm w-full cursor-pointer h-[300px] md:min-h-[170px] md:w-[300px] transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/20"
     >
       <div className="relative overflow-hidden rounded-t-xl">
        

@@ -5,6 +5,7 @@ import Slider from "../../components/Slider";
 import { useQuery } from "@tanstack/react-query";
 import matcheService from "../../services/matcheService";
 import LiveCard from "../../components/Cards/LiveCard";
+import Preloader from "../../components/Preloader";
 function Detail() {
   const location = useLocation();
   const item = location.state;
@@ -14,6 +15,10 @@ function Detail() {
     queryFn: matcheService.fetchMatches,
   });
   const navigate = useNavigate();
+
+  if(isLoading ) {
+    return <Preloader />
+  }
 
   return (
     <div>

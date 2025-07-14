@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import matcheService from "../../services/matcheService";
  
 import { MediaCard } from "../../components/Cards/ChannelCard";
+import Preloader from "../../components/Preloader";
 function Channels() {
   const location = useLocation();
   const id = location.state;
@@ -11,6 +12,10 @@ function Channels() {
     queryKey: ["channels", id],
     queryFn: () => matcheService.fetchChannelbyUd(id),
   });
+
+  if(categoryLoading ) {
+    return <Preloader />
+  }
   return (
     <div className=" pt-22 md:pt-30 min-h-screen  mx-5 md:mx-10 lg:mx-20">
       <nav

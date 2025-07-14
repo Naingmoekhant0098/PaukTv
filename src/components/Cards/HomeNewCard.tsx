@@ -1,14 +1,16 @@
 import moment from "moment";
 import { FaCalendarAlt, FaClock, FaEye } from "react-icons/fa"
 import { MdNavigateNext } from "react-icons/md";
-export default function FootballNewsCard({item} : any) {
+import { useNavigate } from "react-router-dom";
+export default function HomeNewsCard({item} : any) {
     const wordCount = item?.content.trim().split(/\s+/).filter(Boolean).length;
     
     const readMin= Math.ceil(wordCount / 200);
+    const navigate = useNavigate();
   return (
     
     
-      <div className="bg-white/5 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group shadow-lg  w-[250px] min-h-[220px] md:min-h-[260px] md:w-[294px] border border-white/5">
+      <div onClick={()=>navigate(`/news-detail/${item?._id}`)} className="bg-white/5 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group shadow-lg  w-[250px] min-h-[220px] md:min-h-[260px] md:w-[294px] border border-white/5">
        
         <div className="relative overflow-hidden">
           <img

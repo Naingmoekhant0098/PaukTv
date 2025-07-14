@@ -9,6 +9,7 @@ import Channels from './pages/Channels';
 import Matches from './pages/Matches';
 import Highlights from './pages/Highlights';
 import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
  
 function App() {
   return (
@@ -48,6 +49,11 @@ function App() {
     <Route path="/news" element={
       <MainLayout>
         <News />
+      </MainLayout>
+    } />
+     <Route path="/news-detail/:id" element={
+      <MainLayout>
+        <NewsDetail />
       </MainLayout>
     } />
     </Routes>

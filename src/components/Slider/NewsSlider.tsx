@@ -63,23 +63,23 @@ function NewsSlider({ title, link, data}: sliderProps) {
               912: { slidesPerView: 2.7 },
               1024: { slidesPerView: 2.8 }, 
               1280: { slidesPerView: 4.2}, 
-              1440: { slidesPerView: 5 },  
+              1440: { slidesPerView: 4.2 },  
               1920: { slidesPerView: 6 },  
               2560: { slidesPerView: 7 },  
             }}
             className="py-6"
           >
-            {data.length>0 && data?.map((item: any) => (
+            {data?.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
                 <HomeNewsCard item={item} />
               </SwiperSlide>
             ))}
-             {data.length>0 && data?.map((item: any) => (
+             {data?.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
                 <HomeNewsCard item={item} />
               </SwiperSlide>
             ))}
-             {data.length>0 && data?.map((item: any) => (
+             {data?.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
                 <HomeNewsCard item={item} />
               </SwiperSlide>
