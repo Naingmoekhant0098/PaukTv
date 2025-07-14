@@ -4,17 +4,18 @@ import LiveCard from "../Cards/LiveCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
+import HomeNewsCard from "../Cards/HomeNewCard";
 
 interface sliderProps {
   title: string;
   link: string;
   data: any;
-  isSwitch :boolean
+ 
 }
 
-function Slider({ title, link, data, isSwitch}: sliderProps) {
+function NewsSlider({ title, link, data}: sliderProps) {
   
-  const [currentSwitch,setCurrentSwitch] = useState('today');
+   
   
 
   return (
@@ -22,39 +23,26 @@ function Slider({ title, link, data, isSwitch}: sliderProps) {
       <div className=" flex items-center justify-between">
         <div className=" text-xl md:text-2xl font-semibold  tracking-wider uppercase">
          {
-          isSwitch  ? <div>{`${currentSwitch==='today'? "Today" : "Tomorrow"} Matches`}</div> :  title
+           title
          }
         </div>
-        {
-          !isSwitch ?  <Link to={link} className=" flex items-center gap-1 md:gap-2 border p-2 px-2 md:px-4 cursor-pointer border-gray-300 rounded-full">
+          <Link to={link} className=" flex items-center gap-1 md:gap-2 border p-2 px-2 md:px-4 cursor-pointer border-gray-300 rounded-full">
           <div className="  text-[12px] md:text-[13px]">View More</div>
           <div>
             <MdNavigateNext />
           </div>
-        </Link>:
-        <div className=" border border-gray-500  flex items-center  rounded-full">
-        <div onClick={()=>setCurrentSwitch('today')} className={` text-[13px] p-3 px-6 transition-all duration-300 ${currentSwitch ==='today' && 'bg-amber-500' } rounded-full cursor-pointer`}>
-          Today
-        </div>
-        <div onClick={()=>setCurrentSwitch('tomorrow')} className={`transition-all duration-300 text-[13px] p-3 px-6 ${currentSwitch ==='tomorrow' && 'bg-amber-500' } rounded-full cursor-pointer`}>
-          Tomorrow
-        </div>
-          </div>
-        }
+        </Link>
+        
+        
          
       </div>
 
       <div className=" mt-4  relative">
         <div  className="hidden md:block absolute top-0  right-0 z-40 h-full w-10 bg-gradient-to-r from-transparent to-[#01152B]"></div>
        {
-        !isSwitch && data?.length === 0 && <div>Matches Not Found !</div>
+     data?.length === 0 && <div>Matches Not Found !</div>
        }
-       {
-        isSwitch && data?.today?.length === 0 && currentSwitch==='today' && <div>Matches Not Found !</div>
-       }
-       {
-       isSwitch && data?.tomorrow?.length === 0 && currentSwitch==='tomorrow' && <div>Matches Not Found !</div>
-       }
+        
         {
           <Swiper
             slidesPerView={1.2}
@@ -81,21 +69,22 @@ function Slider({ title, link, data, isSwitch}: sliderProps) {
             }}
             className="py-6"
           >
-            {!isSwitch && data?.map((item: any) => (
+            {data.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
-                <LiveCard item={item} />
+                <HomeNewsCard item={item} />
               </SwiperSlide>
             ))}
-             {isSwitch && currentSwitch==='today' && data?.today?.map((item: any) => (
+             {data.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
-                <LiveCard item={item} />
+                <HomeNewsCard item={item} />
               </SwiperSlide>
             ))}
-            {isSwitch && currentSwitch==='tomorrow' && data?.tomorrow?.map((item: any) => (
+             {data.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
-                <LiveCard item={item} />
+                <HomeNewsCard item={item} />
               </SwiperSlide>
             ))}
+             
           </Swiper>
         }
       </div>
@@ -103,4 +92,4 @@ function Slider({ title, link, data, isSwitch}: sliderProps) {
   );
 }
 
-export default Slider;
+export default NewsSlider;

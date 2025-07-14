@@ -53,10 +53,10 @@ function NavBar() {
         <div className=" hidden md:block ">
           <div className=" flex flex-row items-center gap-10 mr-6">
             <Link to={'/'} className=" cursor-pointer nav">Home</Link>
-            <div className=" cursor-pointer nav">Matches</div>
-            <div  className=" cursor-pointer nav">Highlights</div>
-            <div  className=" cursor-pointer nav">Channels</div>
-            <div  className=" cursor-pointer nav">News</div>
+            <Link to={'/matches'} className=" cursor-pointer nav">Matches</Link>
+            <Link  to={'/highlights'} className=" cursor-pointer nav">Highlights</Link>
+            {/* <Link  to={'/channels'} className=" cursor-pointer nav">Channels</Link> */}
+            <Link  to={'/news'} className=" cursor-pointer nav">News</Link>
           </div>
         </div>
       </div>
@@ -74,20 +74,20 @@ function NavBar() {
           </div>
           <div className=" mt-30 flex    justify-center items-center">
            <div className=" flex flex-col gap-10">
-           <div  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311] text-md"> <IoIosHome size={24} /><div className=" text-[14px] font-medium">
-           Home</div></div>
-            <div  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <FaRegListAlt size={20} />
+           <Link  onClick={()=>setIsOpen(false)} to={'/'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311] text-md"> <IoIosHome size={24} /><div className=" text-[14px] font-medium">
+           Home</div></Link>
+            <Link  onClick={()=>setIsOpen(false)} to={'/matches'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <FaRegListAlt size={20} />
             <div className=" text-[14px] font-medium">
-            Matches</div></div>
-            <div  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <LuListTodo size={24} />
+            Matches</div></Link>
+            <Link  onClick={()=>setIsOpen(false)} to={'/highlights'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <LuListTodo size={24} />
             <div className=" text-[14px] font-medium">
-            Highlights</div></div>
-            <div  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <MdLiveTv size={24} />
+            Highlights</div></Link>
+            {/* <Link  onClick={()=>setIsOpen(false)} to={'/channels'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <MdLiveTv size={24} />
             <div className=" text-[14px] font-medium">
-            Channels</div></div>
+            Channels</div></Link> */}
            
-            <div  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <BsNewspaper size={24} />  <div className=" text-[14px] font-medium">
-            News</div></div>
+            <Link  onClick={()=>setIsOpen(false)} to={'/news'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <BsNewspaper size={24} />  <div className=" text-[14px] font-medium">
+            News</div></Link>
            </div>
             
           </div>

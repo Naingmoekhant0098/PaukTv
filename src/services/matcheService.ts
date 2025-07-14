@@ -19,9 +19,19 @@ export default {
       }
      
     },
+    fetchNews : async(params : any)=>{
+      try {
+        const response = await api.get(`/news`,{params});
+        return response.data
+      } catch (error) {
+        console.log(error)
+
+      }
+     
+    },
     fetchChannel : async(params : any)=>{
       try {
-        const response = await api.get(`/channel-category`,{params});
+        const response = await api.get(`/channel-category-posts/all`,{params});
         return response.data
       } catch (error) {
         console.log(error)

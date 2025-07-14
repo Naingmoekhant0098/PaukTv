@@ -6,6 +6,9 @@ import Detail from './pages/Detail';
 import LivePlay from './pages/LivePlay';
 import ScrollToTop from './components/ScrollToTop/index';
 import Channels from './pages/Channels';
+import Matches from './pages/Matches';
+import Highlights from './pages/Highlights';
+import News from './pages/News';
  
 function App() {
   return (
@@ -32,8 +35,27 @@ function App() {
         <Channels />
       </MainLayout>
     } />
-     
-    </Routes></>
+     <Route path="/matches" element={
+      <MainLayout>
+        <Matches />
+      </MainLayout>
+    } />
+      <Route path="/highlights" element={
+      <MainLayout>
+        <Highlights />
+      </MainLayout>
+    } />
+    <Route path="/news" element={
+      <MainLayout>
+        <News />
+      </MainLayout>
+    } />
+    </Routes>
+    
+    
+    
+    </>
+    
   )
 }
 

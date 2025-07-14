@@ -1,14 +1,17 @@
-import React from 'react'
+
 import Banner from '../../components/Banner'
 import Slider from '../../components/Slider'
 import CategorySlider from '../../components/Slider/CategorySlider'
 import Preloader from '../../components/Preloader'
 import { useQuery } from '@tanstack/react-query'
 import matcheService from '../../services/matcheService'
+import NewsSlider from '../../components/Slider/NewsSlider'
 function Home() {
   const {data,isLoading} = useQuery({ queryKey: ['matches'], queryFn: matcheService.fetchMatches })
   const {data:hightlightData,isLoading : hightLightLoading} = useQuery({ queryKey: ['hightLights'], queryFn: matcheService.fetchHighlights })
   const {data:categoryData,isLoading : categoryLoading} = useQuery({ queryKey: ['channels'], queryFn: matcheService.fetchChannel })
+    const {data:newsData,isLoading:newLoading} = useQuery({ queryKey: ['news'], queryFn: matcheService.fetchNews});
+ 
   if(isLoading && hightLightLoading) {
     return <Preloader />
   }
@@ -16,10 +19,13 @@ function Home() {
     <div>
       {/* <Preloader /> */}
       <Banner />
-      <Slider   title='Live Matches' link='/all' data={data?.liveMatches} isSwitch={false}/>
-      <Slider  title='Today Matches' link='/all' data={{today : data?.today , tomorrow : data?.tomorrow}} isSwitch={true}/>
-      <Slider  title='HIGHLIGHTS' link='/all' data={hightlightData} isSwitch={false}/>
+      <Slider   title='Live Matches' link='/matches' data={data?.liveMatches} isSwitch={false}/>
+      <Slider  title='Today Matches' link='/matches' data={{today : data?.today , tomorrow : data?.tomorrow}} isSwitch={true}/>
+     
       <CategorySlider  title='browse by category' data={categoryData} link='/all' />
+      <Slider  title='HIGHLIGHTS' link='/highlights' data={hightlightData} isSwitch={false}/>
+      <NewsSlider  title='Latest News' link='/news' data={newsData?.data && newsData?.data} />
+   
     </div>
     // tomorrow
   )

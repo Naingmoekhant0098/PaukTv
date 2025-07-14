@@ -11,9 +11,6 @@ function Channels() {
     queryKey: ["channels", id],
     queryFn: () => matcheService.fetchChannelbyUd(id),
   });
-   
-   
-  
   return (
     <div className=" pt-22 md:pt-30 min-h-screen  mx-5 md:mx-10 lg:mx-20">
       <nav

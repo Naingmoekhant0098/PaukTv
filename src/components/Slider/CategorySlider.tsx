@@ -18,15 +18,15 @@ function Slider({ title, link, data = [] }: sliderProps) {
         <div className=" text-xl md:text-2xl font-semibold  tracking-wider uppercase">
           {title}
         </div>
-        <div className=" flex items-center gap-1 md:gap-2 border p-2 px-2 md:px-4 cursor-pointer border-gray-300 rounded-full">
+        {/* <div className=" flex items-center gap-1 md:gap-2 border p-2 px-2 md:px-4 cursor-pointer border-gray-300 rounded-full">
           <div className="  text-[12px] md:text-[13px]">View More</div>
           <div>
             <MdNavigateNext />
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <div className="mt-4 md:mt-6">
+      <div className="mt-4">
         {
           <Swiper
             slidesPerView={1.2}
@@ -47,16 +47,26 @@ function Slider({ title, link, data = [] }: sliderProps) {
               768: { slidesPerView: 2.6 }, // Tablets
               820: { slidesPerView: 2.8 },
               1024: { slidesPerView: 3.4 }, // Small desktops/laptops
-              1280: { slidesPerView: 4.2 }, // Medium desktops
-              1440: { slidesPerView: 6 }, // Large desktops
-              1920: { slidesPerView: 6 }, // Full HD and wider
-              2560: { slidesPerView: 7 }, // 2K+ displays
+              1280: { slidesPerView: 6.1 }, // Medium desktops
+              1440: { slidesPerView: 6.1 }, // Large desktops
+              1920: { slidesPerView: 7.1 }, // Full HD and wider
+              2560: { slidesPerView: 8.2 }, // 2K+ displays
             }}
             className="py-6"
           >
             {data?.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item._id}>
-                <CategoryCard  item={item}/>
+                <CategoryCard  item={item.category}/>
+              </SwiperSlide>
+            ))}
+            {data?.length>0 && data?.map((item: any) => (
+              <SwiperSlide key={item._id}>
+                <CategoryCard  item={item.category}/>
+              </SwiperSlide>
+            ))}
+            {data?.length>0 && data?.map((item: any) => (
+              <SwiperSlide key={item._id}>
+                <CategoryCard  item={item.category}/>
               </SwiperSlide>
             ))}
           </Swiper>
