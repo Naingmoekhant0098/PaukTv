@@ -5,7 +5,7 @@ import Slider from "../../components/Slider";
 import { useQuery } from "@tanstack/react-query";
 import matcheService from "../../services/matcheService";
 import LiveCard from "../../components/Cards/LiveCard";
-import ReactPlayer from 'react-player';
+ 
 
 function LivePlay() {
   const location = useLocation();
@@ -18,6 +18,7 @@ function LivePlay() {
 
   return (
     <div>
+      
        <div className=" pt-22 md:pt-30  mx-5 md:mx-10 lg:mx-20">
        <nav className="text-white font-bold text-sm md:text-md " aria-label="Breadcrumb">
   <ol className="list-none p-0 inline-flex">
@@ -46,7 +47,7 @@ function LivePlay() {
           <div className=" col-span-2">
             
             <video src={item.stream_url}  className=" w-full h-auto md:h-[500px] -mt-2" controls autoPlay={true} spellCheck />
-
+            {/* <iframe width='640' height='400' src='https://hoofootay4.spotlightmoment.com/embed/efit2uZDhn0CN' ></iframe> */}
             <div className=" mt-12">
               <div className="">
                 <img

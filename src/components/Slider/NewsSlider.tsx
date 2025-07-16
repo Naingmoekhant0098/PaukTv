@@ -74,16 +74,7 @@ function NewsSlider({ title, link, data}: sliderProps) {
                 <HomeNewsCard item={item} />
               </SwiperSlide>
             ))}
-             {data?.length>0 && data?.map((item: any) => (
-              <SwiperSlide key={item.id}>
-                <HomeNewsCard item={item} />
-              </SwiperSlide>
-            ))}
-             {data?.length>0 && data?.map((item: any) => (
-              <SwiperSlide key={item.id}>
-                <HomeNewsCard item={item} />
-              </SwiperSlide>
-            ))}
+            
              
           </Swiper>
         }

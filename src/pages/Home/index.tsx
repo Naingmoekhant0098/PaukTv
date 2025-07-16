@@ -26,7 +26,7 @@ function Home() {
       <CategorySlider  title='browse by category' data={categoryData} link='/all' />
       <Slider  title='HIGHLIGHTS' link='/highlights' data={hightlightData} isSwitch={false}/>
       <NewsSlider  title='Latest News' link='/news' data={newsData?.data && newsData?.data} />
-      <ImageGallery  title='Latest Photo Albumn' link='/news' data={newsData?.data && newsData?.data} />
+      {/* <ImageGallery  title='Latest Photo Albumn' link='/news' data={newsData?.data && newsData?.data} /> */}
    
     </div>
     // tomorrow

@@ -39,6 +39,36 @@ export default {
       }
      
     },
+    fetchAds : async(params : any)=>{
+      try {
+        const response = await api.get(`/ads/type/popup/web`,{params});
+        return response.data
+      } catch (error) {
+        console.log(error)
+
+      }
+     
+    },
+    fetchAdsBanner : async(params : any)=>{
+      try {
+        const response = await api.get(`/ads/type/banner/web`,{params});
+        return response.data
+      } catch (error) {
+        console.log(error)
+
+      }
+     
+    },
+    fetchAdsBannerMedium : async(params : any)=>{
+      try {
+        const response = await api.get(`/ads/type/medium/web`,{params});
+        return response.data
+      } catch (error) {
+        console.log(error)
+
+      }
+     
+    },
     fetchChannel : async(params : any)=>{
       try {
         const response = await api.get(`/channel-category-posts/all`,{params});

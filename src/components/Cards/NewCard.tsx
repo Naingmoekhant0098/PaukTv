@@ -10,7 +10,7 @@ export default function FootballNewsCard({item} : any) {
   return (
     
     
-      <div  className="bg-white/5 cursor-pointer rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group shadow-lg border border-white/5">
+      <div onClick={()=>navigate(`/news-detail/${item?._id}`)}  className="bg-white/5 cursor-pointer rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group shadow-lg border border-white/5">
        
         <div className="relative overflow-hidden">
           <img

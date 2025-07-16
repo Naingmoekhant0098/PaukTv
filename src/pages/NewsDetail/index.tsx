@@ -8,6 +8,8 @@ import Preloader from "../../components/Preloader";
 import { FaCalendarAlt } from "react-icons/fa";
 import moment from "moment";
 import NewsSlider from "../../components/Slider/NewsSlider";
+import Banner from "../../components/Ads/Banner";
+import BannerMedium from "../../components/Ads/BannerMedium";
 
 function NewsDetail() {
   const { id } = useParams();
@@ -88,41 +90,14 @@ function NewsDetail() {
           className=" text-[16px] w-full text-wrap  mb-4  [&_*]:!bg-inherit [&_*]:!text-white "
         ></div>
 
-<div className=" mt-10">
-              <div className="">
-                <img
-                 className=" w-full rounded-xl h-auto md:h-[350px] object-cover"
-                  src="https://www.investopedia.com/thmb/Br2T0CSGtsyj1ME9Su-MwSOsHR0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1463460814-286d8f0f5acc46af8e1f40010327bc5b.jpg"
-                  alt=""
-                />
-                <div className=" text-[14px] mt-3 opacity-85">
-                  While the Azzurri saw off Venezuela in Miami, their South
-                  American counterparts continued building up to the Copa
-                  America by beating Guatemala.
-                </div>
-              </div>
-            </div>
-
+ <Banner />
 
 
 
       </div>
 
       <div className=" hidden md:block col-span-1">
-            <div className="">
-              <div className="">
-                <img
-                  className=" w-full rounded-xl h-auto md:h-[200px] object-cover"
-                  src="https://www.investopedia.com/thmb/Br2T0CSGtsyj1ME9Su-MwSOsHR0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1463460814-286d8f0f5acc46af8e1f40010327bc5b.jpg"
-                  alt=""
-                />
-                <div className=" mt-3 text-[14px] opacity-75">
-                  While the Azzurri saw off Venezuela in Miami, their South
-                  American counterparts continued building up to the Copa
-                  America by beating Guatemala.
-                </div>
-              </div>
-            </div>
+            <BannerMedium />
             <div className=" mt-4 flex flex-col gap-4 ">
               {newsData?.data &&
                 newsData?.data.slice(0, 3).map((item: any, i: number) => {

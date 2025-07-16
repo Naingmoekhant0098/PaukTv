@@ -11,6 +11,16 @@
 
   
 }
+
+.popup{
+  transition: all .3s ease-in;
+  animation: popup .3s ease;z-index: 100;
+
+}
+@keyframes popup {
+  0% {opacity: 0}
+  100% { opacity: 100}
+}
 body{
   background-color:#01152B;
    color: white;
