@@ -4,7 +4,8 @@ import LiveCard from "../Cards/LiveCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
-import FootballNewsCard from "../Cards/NewCard";
+
+import HighlightCard from "../Cards/HighlightCard";
 
 interface sliderProps {
   title: string;
@@ -13,7 +14,7 @@ interface sliderProps {
  
 }
 
-function NewsSlider({ title, link, data}: sliderProps) {
+function HighlightSlider({ title, link, data}: sliderProps) {
   
    
   
@@ -71,7 +72,7 @@ function NewsSlider({ title, link, data}: sliderProps) {
           >
             {data?.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
-                <FootballNewsCard item={item} />
+                <HighlightCard item={item} />
               </SwiperSlide>
             ))}
             
@@ -83,4 +84,4 @@ function NewsSlider({ title, link, data}: sliderProps) {
   );
 }
 
-export default NewsSlider;
+export default HighlightSlider;

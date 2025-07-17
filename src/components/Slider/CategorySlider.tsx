@@ -18,12 +18,7 @@ function Slider({ title, link, data = [] }: sliderProps) {
         <div className=" text-xl md:text-2xl font-semibold  tracking-wider uppercase">
           {title}
         </div>
-        {/* <div className=" flex items-center gap-1 md:gap-2 border p-2 px-2 md:px-4 cursor-pointer border-gray-300 rounded-full">
-          <div className="  text-[12px] md:text-[13px]">View More</div>
-          <div>
-            <MdNavigateNext />
-          </div>
-        </div> */}
+         
       </div>
 
       <div className="mt-4">
@@ -59,16 +54,7 @@ function Slider({ title, link, data = [] }: sliderProps) {
                 <CategoryCard  item={item.category}/>
               </SwiperSlide>
             ))}
-            {data?.length>0 && data?.map((item: any) => (
-              <SwiperSlide key={item._id}>
-                <CategoryCard  item={item.category}/>
-              </SwiperSlide>
-            ))}
-            {data?.length>0 && data?.map((item: any) => (
-              <SwiperSlide key={item._id}>
-                <CategoryCard  item={item.category}/>
-              </SwiperSlide>
-            ))}
+             
           </Swiper>
         }
       </div>

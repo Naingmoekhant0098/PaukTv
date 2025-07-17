@@ -3,7 +3,7 @@ import { MdNavigateNext } from "react-icons/md";
 import LiveCard from "../Cards/LiveCard";
 
 import { Link } from "react-router-dom";
-import HomeNewsCard from "../Cards/HomeNewCard";
+// import HomeNewsCard from "../Cards/Card";
 
 interface sliderProps {
   title: string;

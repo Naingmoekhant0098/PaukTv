@@ -18,7 +18,7 @@ function BannerMedium() {
       },[data])
     
   return (
-    <div className="  border p-2 border-gray-600 rounded-2xl mt-8"> 
+    <div className="  border p-2 border-gray-600 rounded-2xl "> 
                 <a href={currentAds?.linkUrl} className="">
                   <img
                     className=" w-full rounded-xl h-auto md:h-[250px] object-cover"

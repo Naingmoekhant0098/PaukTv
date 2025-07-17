@@ -1,4 +1,19 @@
 import api from "../api/axios";
+const ytAPI = import.meta.env.VITE_YOUTUBE_API;
+
+function formatYouTubeDuration(isoDuration : any) {
+  const match = isoDuration?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+
+const hours = parseInt(match?.[1]) || 0;
+const minutes = parseInt(match?.[2]) || 0;
+const seconds = parseInt(match?.[3]) || 0;
+
+if (hours > 0) {
+  return `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+} else {
+  return `${minutes}:${String(seconds).padStart(2, '0')}`;
+}
+}
 export default {
     fetchMatches : async(params : any)=>{
       try {
@@ -56,8 +71,19 @@ export default {
       } catch (error) {
         console.log(error)
 
+      }  
+    },
+    fetchHighlightsFromYt: async(query : string,maxResults : number)=>{
+      try {
+        const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&order=date&key=${ytAPI}&videoDuration=medium&type=video`;
+        const response = await fetch(url);
+        const json = await response.json();
+        return json.items;
+       
+      } catch (error) {
+        console.log(error)
+
       }
-     
     },
     fetchAdsBannerMedium : async(params : any)=>{
       try {

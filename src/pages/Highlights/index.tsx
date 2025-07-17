@@ -1,13 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import matcheService from '../../services/matcheService';
 import MatchCard from '../../components/Cards/MatchCard';
 import Preloader from '../../components/Preloader';
+import HighlightCard from '../../components/Cards/HighlightCard';
 
 function Highlights() {
-  const {data,isLoading} = useQuery({ queryKey: ['hightLights'], queryFn: matcheService.fetchHighlights });
+  const [current,setCurrent]=useState<number>(10);
+  const {data,isLoading} = useQuery({ queryKey: ['hightlights',current], queryFn:()=> matcheService.fetchHighlightsFromYt("football highlights",current) });
   
+
+  console.log(data);
   if(isLoading ) {
     return <Preloader />
   }
@@ -28,15 +32,23 @@ function Highlights() {
 </nav>
 <div className=' mt-10'>
 <div className=" text-xl md:text-2xl font-semibold  tracking-wider uppercase">
-        <div>Live Matches</div>
+        <div>Latest Highlights</div>
       </div>
-      <div className=' grid grid-cols-1 md:grid-cols-5 gap-4 mt-5'>
+      <div className=' grid grid-cols-1 md:grid-cols-4 gap-4 mt-5'>
         {
           data?.length>0 ? data?.map((item:any,i:number)=>(
-             <MatchCard  item={item} key={i}/>
+             <HighlightCard  item={item} key={i}/>
           )) : <div>No Matches Found</div>
         }
       </div>
+
+    <div className=' flex items-center justify-center mt-4 '>
+    <div onClick={()=>setCurrent((prev)=>prev+10)} className=" flex items-center gap-1 md:gap-2 border p-2 px-2 md:px-4 cursor-pointer transition duration-300  hover:border-[#F65311] hover:bg-[#F65311] border-gray-300 rounded-full">
+               <div className="  text-[12px] md:text-[13px]">Load More</div>
+              
+               
+             </div>
+    </div>
 </div>
 
 </div>

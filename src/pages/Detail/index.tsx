@@ -26,6 +26,8 @@ function Detail() {
     return <Preloader />;
   }
 
+  console.log(item)
+
   return (
     <>
     <Ads />
