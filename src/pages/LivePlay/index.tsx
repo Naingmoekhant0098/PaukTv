@@ -5,6 +5,7 @@ import Slider from "../../components/Slider";
 import { useQuery } from "@tanstack/react-query";
 import matcheService from "../../services/matcheService";
 import LiveCard from "../../components/Cards/LiveCard";
+import Banner from "../../components/Ads/Banner";
  
 
 function LivePlay() {
@@ -48,20 +49,7 @@ function LivePlay() {
             
             <video src={item.stream_url}  className=" w-full h-auto md:h-[500px] -mt-2" controls autoPlay={true} spellCheck />
             {/* <iframe width='640' height='400' src='https://hoofootay4.spotlightmoment.com/embed/efit2uZDhn0CN' ></iframe> */}
-            <div className=" mt-12">
-              <div className="">
-                <img
-                 className=" w-full rounded-xl h-auto md:h-[350px] object-cover"
-                  src="https://www.investopedia.com/thmb/Br2T0CSGtsyj1ME9Su-MwSOsHR0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1463460814-286d8f0f5acc46af8e1f40010327bc5b.jpg"
-                  alt=""
-                />
-                <div className=" text-[14px] mt-3 opacity-85">
-                  While the Azzurri saw off Venezuela in Miami, their South
-                  American counterparts continued building up to the Copa
-                  America by beating Guatemala.
-                </div>
-              </div>
-            </div>
+           <Banner />
           </div>
           <div className=" hidden md:block col-span-1">
             <div className="">

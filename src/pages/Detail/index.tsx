@@ -7,8 +7,8 @@ import matcheService from "../../services/matcheService";
 import LiveCard from "../../components/Cards/LiveCard";
 import Preloader from "../../components/Preloader";
 import Ads from "../../components/Ads";
-import Banner from "../../components/Ads/BannerMedium";
-import BannerMedium from "../../components/Ads/Banner";
+import BannerMedium from "../../components/Ads/BannerMedium";
+import Banner from "../../components/Ads/Banner";
 function Detail() {
   const location = useLocation();
   const item = location.state;

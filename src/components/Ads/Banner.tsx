@@ -18,7 +18,7 @@ function Banner() {
       },[data])
     
   return (
-        <div className="  border p-2 border-gray-600 rounded-2xl">
+        <div className="  border p-2 border-gray-600 rounded-2xl mt-12">
                 <a href={currentAds?.linkUrl} className="">
                   <img
                     className=" w-full rounded-xl h-[350px] object-cover"
