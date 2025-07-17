@@ -9,9 +9,7 @@ import HighlightCard from '../../components/Cards/HighlightCard';
 function Highlights() {
   const [current,setCurrent]=useState<number>(10);
   const {data,isLoading} = useQuery({ queryKey: ['hightlights',current], queryFn:()=> matcheService.fetchHighlightsFromYt("football highlights",current) });
-  
-
-  console.log(data);
+   
   if(isLoading ) {
     return <Preloader />
   }

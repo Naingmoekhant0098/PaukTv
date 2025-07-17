@@ -13,8 +13,6 @@ interface itemProps {
   }
 
 }
-
-
 function LiveCard({item} : itemProps) {
   const navigate = useNavigate();
   function isUnixTimestamp(value: any): boolean {
