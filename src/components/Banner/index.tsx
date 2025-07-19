@@ -27,12 +27,14 @@ function Banner() {
         </div>
 
         
-        <div className=" hidden md:block flex mt-3 md:mt-6 ">
-        <div className=" border p-3 px-8   rounded-full  text-center  border-gray-400 text-gray-300 text-[12px] md:text-[15px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
+        <div className=" hidden md:block  mt-3 md:mt-6 ">
+       <div className=" flex">
+       <div className=" border p-3 px-8   rounded-full  text-center  border-gray-400 text-gray-300 text-[12px] md:text-[15px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
             Watch Now
           </div>
           
         </div>
+       </div>
       </div>
     </div>
   );
