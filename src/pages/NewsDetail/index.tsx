@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import matcheService from "../../services/matcheService";
-import MatchCard from "../../components/Cards/MatchCard";
+// import MatchCard from "../../components/Cards/MatchCard";
 import FootballNewsCard from "../../components/Cards/NewCard";
 import Preloader from "../../components/Preloader";
 import { FaCalendarAlt } from "react-icons/fa";
@@ -19,7 +19,7 @@ function NewsDetail() {
     queryFn: () => matcheService.fetchNewsById(id),
   });
    
-   const {data:newsData,isLoading:newLoading} = useQuery({ queryKey: ['home-news'], queryFn: matcheService.fetchNews});
+   const {data:newsData} = useQuery({ queryKey: ['home-news'], queryFn: matcheService.fetchNews});
    
 
   if (isLoading) {

@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
 import matcheService from "../../services/matcheService";
-import MatchCard from "../../components/Cards/MatchCard";
+// import MatchCard from "../../components/Cards/MatchCard";
 import FootballNewsCard from "../../components/Cards/NewCard";
 import Preloader from "../../components/Preloader";
 

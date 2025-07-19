@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import MainLayout from './components/layouts/MainLayout'
 import { Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
@@ -10,6 +10,7 @@ import Matches from './pages/Matches';
 import Highlights from './pages/Highlights';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
+import "swiper/css";
  
 function App() {
   return (

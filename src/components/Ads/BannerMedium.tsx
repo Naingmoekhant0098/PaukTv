@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import matcheService from '../../services/matcheService';
 
 function BannerMedium() {
-    const { data, isLoading } = useQuery({
+    const { data } = useQuery({
         queryKey: ["ads"],
         queryFn: () => matcheService.fetchAdsBannerMedium({}),
       });

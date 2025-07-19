@@ -1,7 +1,7 @@
-import React from 'react'
+// import React from 'react'
 
 import { GiTv } from "react-icons/gi";
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 function CategoryCard({item}:any) {
   const navigate = useNavigate();
   

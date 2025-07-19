@@ -1,8 +1,8 @@
-import React from "react";
-import { MdNavigateNext } from "react-icons/md";
+// import React from "react";
+// import { MdNavigateNext } from "react-icons/md";
 import CategoryCard from "../Cards/CategoryCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+
 
 interface sliderProps {
   title: string;
@@ -10,7 +10,7 @@ interface sliderProps {
   data: any;
 }
 
-function Slider({ title, link, data = [] }: sliderProps) {
+function Slider({ title, data = [] }: sliderProps) {
 
   return (
     <div className=" mx-4 md:mx-10 lg:mx-20 mt-6 md:mt-10 ">

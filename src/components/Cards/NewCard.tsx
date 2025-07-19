@@ -1,5 +1,5 @@
 import moment from "moment";
-import { FaCalendarAlt, FaClock, FaEye } from "react-icons/fa"
+import { FaCalendarAlt, FaClock } from "react-icons/fa"
 import { MdNavigateNext } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 export default function FootballNewsCard({item} : any) {

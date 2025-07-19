@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import moment from "moment";
+// import moment from "moment";
 import Slider from "../../components/Slider";
 import { useQuery } from "@tanstack/react-query";
 import matcheService from "../../services/matcheService";
@@ -11,8 +11,8 @@ import BannerMedium from "../../components/Ads/BannerMedium";
 function LivePlay() {
   const location = useLocation();
   const item = location.state;
-  console.log(item);
-  const { data, isLoading } = useQuery({
+  // console.log(item);
+  const { data } = useQuery({
     queryKey: ["matches"],
     queryFn: matcheService.fetchMatches,
   });
@@ -66,9 +66,9 @@ function LivePlay() {
               src={item.stream_url}
               title="YouTube video player"
               className=" w-full h-auto md:h-[500px] -mt-2"
-              frameborder={0}
+              // frameborder={0}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              // allowfullscreen
             ></iframe>
             {/* <iframe width='640' height='400' src='https://hoofootay4.spotlightmoment.com/embed/efit2uZDhn0CN' ></iframe> */}
             <Banner />

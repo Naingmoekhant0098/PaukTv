@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
+// import React from 'react'
 import matcheService from '../../services/matcheService'
 import { Link } from 'react-router-dom';
 import MatchCard from '../../components/Cards/MatchCard';
 
 function Matches() {
-  const {data,isLoading} = useQuery({ queryKey: ['matches'], queryFn: matcheService.fetchMatches });
+  const {data} = useQuery({ queryKey: ['matches'], queryFn: matcheService.fetchMatches });
   
   return (
     <div className=" pt-22 md:pt-30  mx-5 md:mx-10 lg:mx-20">

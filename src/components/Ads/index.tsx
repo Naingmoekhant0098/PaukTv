@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import matcheService from "../../services/matcheService";
 
 function Ads() {
   const [isAdsShow, setisAdsShow] = useState(true);
   const [counter, setCounter] = useState(1);
  
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ["ads"],
     queryFn: () => matcheService.fetchAds({}),
   });

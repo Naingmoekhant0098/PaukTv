@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+// import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import matcheService from "../../services/matcheService";
  
@@ -57,7 +57,7 @@ function Channels() {
         {categoryData?.length > 0 &&
           categoryData?.map((item: any, index: number) => {
             return (
-               <MediaCard item={item} />
+               <MediaCard key={index} item={item} />
             );
           })}
         

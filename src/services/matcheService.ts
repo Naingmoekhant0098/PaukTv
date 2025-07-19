@@ -1,19 +1,19 @@
 import api from "../api/axios";
 const ytAPI = import.meta.env.VITE_YOUTUBE_API;
 
-function formatYouTubeDuration(isoDuration : any) {
-  const match = isoDuration?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+// function formatYouTubeDuration(isoDuration : any) {
+//   const match = isoDuration?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
 
-const hours = parseInt(match?.[1]) || 0;
-const minutes = parseInt(match?.[2]) || 0;
-const seconds = parseInt(match?.[3]) || 0;
+// const hours = parseInt(match?.[1]) || 0;
+// const minutes = parseInt(match?.[2]) || 0;
+// const seconds = parseInt(match?.[3]) || 0;
 
-if (hours > 0) {
-  return `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-} else {
-  return `${minutes}:${String(seconds).padStart(2, '0')}`;
-}
-}
+// if (hours > 0) {
+//   return `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+// } else {
+//   return `${minutes}:${String(seconds).padStart(2, '0')}`;
+// }
+// }
 export default {
     fetchMatches : async(params : any)=>{
       try {
