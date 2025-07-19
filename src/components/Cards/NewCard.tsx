@@ -16,7 +16,7 @@ export default function FootballNewsCard({item} : any) {
           <img
             src={item?.image}
             alt="Football match action"
-            className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-[180px] md:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -39,7 +39,7 @@ export default function FootballNewsCard({item} : any) {
           </h2>
 
         
-          <div  dangerouslySetInnerHTML={{__html: item?.content}} className=" text-sm mb-4 line-clamp-3 leading-relaxed [&_*]:!bg-inherit [&_*]:!text-gray-400 " >
+          <div  dangerouslySetInnerHTML={{__html: item?.content}} className=" text-sm mb-4 line-clamp-2 md:line-clamp-3 leading-relaxed [&_*]:!bg-inherit [&_*]:!text-gray-400 " >
            
           </div>
 

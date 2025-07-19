@@ -27,9 +27,9 @@ function NewsDetail() {
   }
   return (
   <>
-    <div className=" pt-22 md:pt-30  mx-5 md:mx-20 lg:mx-20">
+    <div className=" pt-16 md:pt-30  mx-5 md:mx-20 lg:mx-20">
       <nav
-        className="text-white font-bold text-md md:text-md "
+        className="text-white font-bold  mt-6 text-md md:text-md "
         aria-label="Breadcrumb"
       >
         <ol className="list-none p-0 inline-flex">
@@ -57,15 +57,10 @@ function NewsDetail() {
               <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
             </svg>
           </li>
-          <li className="flex items-center">
-            <Link className=" font-medium" to={"/highlights"}>
-              {data?.data?.title}
-            </Link>
-            {/* <svg className="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg> */}
-          </li>
+         
         </ol>
       </nav>
-    <div className=" grid grid-cols-3 mt-10 gap-5">
+    <div className=" grid grid-cols-1 md:grid-cols-3 mt-6 gap-5">
     <div className="  space-y-4 col-span-2">
         <div className=" uppercase inline-block left-4 bg-[#ba3804af] text-white px-3 py-1 rounded-md text-sm  font-semibold tracking-wide">
           {data?.data?.category}
@@ -81,7 +76,7 @@ function NewsDetail() {
           <img
             src={data?.data?.image}
             alt="Football match action"
-            className="w-full h-[40vh] md:h-[60vh] my-6 object-top   rounded-xl object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-[30vh] md:h-[60vh] my-6 object-top   rounded-xl object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
 

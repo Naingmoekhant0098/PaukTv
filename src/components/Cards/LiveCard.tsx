@@ -61,7 +61,7 @@ function LiveCard({item} : itemProps) {
 
         <div className=" col-span-2  flex items-center flex-col justify-center text-center ">
         <img src={ item?.away_team_logo}  alt=" logo not found" className=" w-14 md:w-16 h-14 md:h-16  object-contain" />
-            <div className=" text-[13px] md:text-[14px] mt-3 line-clamp-2  h-10 ">
+            <div className=" text-[13px] md:text-[14px] mt-3 line-clamp-2  h-1  font-semibold ">
             {item && item?.away_team_name}
             </div>
         </div>

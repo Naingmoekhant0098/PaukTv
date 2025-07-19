@@ -21,7 +21,7 @@ function Banner() {
         <div className="  border p-2 border-gray-600 rounded-2xl mt-12">
                 <a href={currentAds?.linkUrl} className="">
                   <img
-                    className=" w-full rounded-xl h-[350px] object-cover"
+                    className=" w-full rounded-xl h-[200px] object-top md:h-[350px] object-cover"
                     src={data?.ads?.length > 0 && currentAds?.imageUrl}
                     alt=""
                   />
