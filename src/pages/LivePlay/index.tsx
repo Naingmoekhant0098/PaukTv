@@ -67,6 +67,7 @@ function LivePlay() {
               title="YouTube video player"
               className=" w-full h-[250px] md:h-[500px] -mt-2"
               // frameborder={0}
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen={true}
             ></iframe>
