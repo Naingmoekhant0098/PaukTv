@@ -81,18 +81,18 @@ function Slider({ title, link, data, isSwitch}: sliderProps) {
             }}
             className="py-6"
           >
-            {!isSwitch && data?.map((item: any) => (
-              <SwiperSlide key={item.id}>
+            {!isSwitch && data?.map((item: any,i:number) => (
+              <SwiperSlide key={i}>
                 <LiveCard item={item} />
               </SwiperSlide>
             ))}
-             {isSwitch && currentSwitch==='today' && data?.today?.map((item: any) => (
-              <SwiperSlide key={item.id}>
+             {isSwitch && currentSwitch==='today' && data?.today?.map((item: any , i : number) => (
+              <SwiperSlide key={i}>
                 <LiveCard item={item} />
               </SwiperSlide>
             ))}
-            {isSwitch && currentSwitch==='tomorrow' && data?.tomorrow?.map((item: any) => (
-              <SwiperSlide key={item.id}>
+            {isSwitch && currentSwitch==='tomorrow' && data?.tomorrow?.map((item: any,i:number) => (
+              <SwiperSlide key={i}>
                 <LiveCard item={item} />
               </SwiperSlide>
             ))}

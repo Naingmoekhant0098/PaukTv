@@ -17,6 +17,8 @@ interface itemProps {
 
 function MatchCard({item} : itemProps) {
   const navigate = useNavigate();
+
+   
   function isUnixTimestamp(value: any): boolean {
     return value > 0 && value.toString().length === 10;
   }

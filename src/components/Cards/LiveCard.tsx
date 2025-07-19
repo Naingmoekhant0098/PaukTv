@@ -24,6 +24,8 @@ function LiveCard({item} : itemProps) {
     }
     return moment(dateInput).format('LLL');
   }
+
+  
   return (
     <div className="rounded-[10px] border border-white/5 bg-white/5 backdrop-blur-[0.6px] w-[250px] min-h-[220px] md:min-h-[260px] md:w-[294px] p-4 md:p-6">
       <div className=" flex items-center justify-between">
@@ -60,9 +62,9 @@ function LiveCard({item} : itemProps) {
         </div>
 
         <div className=" col-span-2  flex items-center flex-col justify-center text-center ">
-        <img src={ item?.away_team_logo}  alt=" logo not found" className=" w-14 md:w-16 h-14 md:h-16  object-contain" />
-            <div className=" text-[13px] md:text-[14px] mt-3 line-clamp-2  h-1  font-semibold ">
-            {item && item?.away_team_name}
+        <img src={ item && item?.away_team_logo}  alt=" logo not found" className=" w-14 md:w-16 h-14 md:h-16  object-contain" />
+            <div className=" text-[13px] md:text-[14px] mt-3 line-clamp-2  h-10  font-semibold ">
+            {item?.away_team_name}
             </div>
         </div>
       </div>
