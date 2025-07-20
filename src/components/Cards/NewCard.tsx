@@ -34,7 +34,7 @@ export default function FootballNewsCard({item} : any) {
 
         <div className="p-4">
          
-          <h2 className="text-xl mt-0  font-bold text-white mb-3 line-clamp-2 group-hover:text-[#F65311] transition-colors duration-200 leading-tight">
+          <h2 className="text-lg md:text-xl mt-0  font-semibold md:font-bold text-white mb-3 line-clamp-2 group-hover:text-[#F65311] transition-colors duration-200 leading-tight">
            {item?.title}
           </h2>
 

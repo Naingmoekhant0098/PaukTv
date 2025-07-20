@@ -18,10 +18,10 @@ function Banner() {
           <div className=" text-[14px] text-red-400 font-medium ">Live Now</div>
         </div>
         <div className=" font-bold text-xl md:text-3xl mt-1 md:mt-3 ">
-          For the Fans, By the Fans — Welcome to Webster
+          For the Fans, By the Fans — Welcome to Pauk Tv
         </div>
         <div className=" mt-2 md:mt-4 text-[14px] font-medium md:text-[16px] text-gray-300 leading-7">
-          Whether it’s Premier League, La Liga, or the World Cup — Webster
+          Whether it’s Premier League, La Liga, or the World Cup — Pauk Tv
           brings the action to your screen. Experience football like true fans
           do.
         </div>
