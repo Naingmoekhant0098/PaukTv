@@ -11,10 +11,13 @@ interface sliderProps {
   title: string;
   link: string;
   data: any;
+  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void
+
  
 }
 
-function HighlightSlider({ title, link, data}: sliderProps) {
+function HighlightSlider({ title, link, data,setIsAdsShow,handleCurrentVideo}: sliderProps) {
   
    
   
@@ -72,7 +75,7 @@ function HighlightSlider({ title, link, data}: sliderProps) {
           >
             {data?.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
-                <HighlightCard item={item} />
+                <HighlightCard setIsAdsShow={setIsAdsShow}  handleCurrentVideo={handleCurrentVideo} item={item} />
               </SwiperSlide>
             ))}
             

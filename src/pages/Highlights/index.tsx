@@ -6,7 +6,8 @@ import matcheService from '../../services/matcheService';
 import Preloader from '../../components/Preloader';
 import HighlightCard from '../../components/Cards/HighlightCard';
 
-function Highlights() {
+function Highlights({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void}) {
   const [current,setCurrent]=useState<number>(10);
   const {data,isLoading} = useQuery({ queryKey: ['hightlights',current], queryFn:()=> matcheService.fetchHighlightsFromYt("football highlights",current) });
    
@@ -35,7 +36,8 @@ function Highlights() {
       <div className=' grid grid-cols-1 md:grid-cols-4 gap-4 mt-5'>
         {
           data?.length>0 ? data?.map((item:any,i:number)=>(
-             <HighlightCard  item={item} key={i}/>
+             <HighlightCard  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo}  item={item} key={i}/>
           )) : <div>No Matches Found</div>
         }
       </div>

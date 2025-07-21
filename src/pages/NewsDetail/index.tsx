@@ -11,7 +11,8 @@ import NewsSlider from "../../components/Slider/NewsSlider";
 import Banner from "../../components/Ads/Banner";
 import BannerMedium from "../../components/Ads/BannerMedium";
 
-function NewsDetail() {
+function NewsDetail({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void}) {
   const { id } = useParams();
 
   const { data, isLoading } = useQuery({
@@ -96,7 +97,7 @@ function NewsDetail() {
             <div className=" mt-4 flex flex-col gap-4 ">
               {newsData?.data &&
                 newsData?.data.slice(0, 3).map((item: any, i: number) => {
-                  return <FootballNewsCard item={item} key={i} />;
+                  return <FootballNewsCard  setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} item={item} key={i} />;
                 })}
             </div>
           </div>
@@ -105,7 +106,7 @@ function NewsDetail() {
      
     </div>
  
-  <NewsSlider  title='Latest News' link='/news' data={newsData?.data && newsData?.data} />
+  <NewsSlider  setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} title='Latest News' link='/news' data={newsData?.data && newsData?.data} />
    
   
   </>

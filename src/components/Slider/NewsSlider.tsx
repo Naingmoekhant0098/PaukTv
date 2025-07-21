@@ -10,10 +10,11 @@ interface sliderProps {
   title: string;
   link: string;
   data: any;
- 
+  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void
 }
 
-function NewsSlider({ title, link, data}: sliderProps) {
+function NewsSlider({ title, link, data,setIsAdsShow ,handleCurrentVideo}: sliderProps) {
   
    
   
@@ -71,7 +72,7 @@ function NewsSlider({ title, link, data}: sliderProps) {
           >
             {data?.length>0 && data?.map((item: any) => (
               <SwiperSlide key={item.id}>
-                <FootballNewsCard item={item} />
+                <FootballNewsCard setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} item={item} />
               </SwiperSlide>
             ))}
             

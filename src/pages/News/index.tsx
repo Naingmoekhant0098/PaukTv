@@ -6,7 +6,8 @@ import matcheService from "../../services/matcheService";
 import FootballNewsCard from "../../components/Cards/NewCard";
 import Preloader from "../../components/Preloader";
 
-function News() {
+function News({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void}) {
   const [currentPage, setCurrentPage] = useState(1);
   const { data, isLoading } = useQuery({
     queryKey: ["news", currentPage],
@@ -50,7 +51,7 @@ function News() {
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-4 mt-5">
           {data?.data?.length > 0 ? (
             data?.data?.map((item: any, i: number) => (
-              <FootballNewsCard item={item} key={i} />
+              <FootballNewsCard  setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} item={item} key={i} />
             ))
           ) : (
             <div>No News Found</div>

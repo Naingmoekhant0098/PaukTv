@@ -4,7 +4,8 @@ import matcheService from '../../services/matcheService'
 import { Link } from 'react-router-dom';
 import MatchCard from '../../components/Cards/MatchCard';
 
-function Matches() {
+function Matches({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void}) {
   const {data} = useQuery({ queryKey: ['matches'], queryFn: matcheService.fetchMatches });
   
   return (
@@ -30,7 +31,8 @@ function Matches() {
       <div className=' grid grid-cols-1 md:grid-cols-5 gap-4 mt-5'>
         {
           data?.liveMatches.length>0 ? data?.liveMatches?.map((item:any,i:number)=>(
-             <MatchCard  item={item} key={i}/>
+             <MatchCard  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} item={item} key={i}/>
           )) : <div>No Matches Found</div>
         }
       </div>
@@ -42,7 +44,8 @@ function Matches() {
       <div className=' grid grid-cols-1 md:grid-cols-5 gap-3 mt-3 md:mt-5'>
         {
           data?.today.length>0 ? data?.today?.map((item:any,i:number)=>(
-             <MatchCard  item={item} key={i}/>
+             <MatchCard   setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} item={item} key={i}/>
           )): <div>No Matches Found</div>
         }
       </div>
@@ -55,7 +58,8 @@ function Matches() {
       <div className=' grid grid-cols-1 md:grid-cols-5 gap-3 mt-5'>
         {
           data?.tomorrow?.length >0 ? data?.tomorrow?.map((item:any,i:number)=>(
-             <MatchCard  item={item} key={i}/>
+             <MatchCard  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} item={item} key={i}/>
           )): <div>No Matches Found</div>
         }
       </div>

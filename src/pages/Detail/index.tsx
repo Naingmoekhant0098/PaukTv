@@ -6,12 +6,15 @@ import { useQuery } from "@tanstack/react-query";
 import matcheService from "../../services/matcheService";
 import LiveCard from "../../components/Cards/LiveCard";
 import Preloader from "../../components/Preloader";
-import Ads from "../../components/Ads";
+// import Ads from "../../components/Ads";
 import BannerMedium from "../../components/Ads/BannerMedium";
 import Banner from "../../components/Ads/Banner";
-function Detail() {
+// import { useState } from "react";
+function Detail({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void}) {
   const location = useLocation();
   const item = location.state;
+  // const [isRead,setIsRead] = useState(false);
   
   const { data, isLoading } = useQuery({
     queryKey: ["matches"],
@@ -25,12 +28,16 @@ function Detail() {
   if (isLoading) {
     return <Preloader />;
   }
-
+  
  
 
   return (
     <>
-    <Ads />
+    
+  {/* {
+    !isRead &&  <Ads setIsRead={setIsRead} />
+  }
+  */}
       <div>
         <div className=" pt-22 md:pt-30  mx-5 md:mx-10 lg:mx-20">
           <nav
@@ -162,14 +169,16 @@ function Detail() {
               <BannerMedium />
               <div className=" mt-4 flex flex-col gap-4 ">
                 {data &&
-                  data.today.slice(0, 3).map((item: any, i: number) => {
-                    return <LiveCard item={item} key={i} />;
+                  data.today.slice(0, 2).map((item: any, i: number) => {
+                    return <LiveCard  item={item} key={i} setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} />;
                   })}
               </div>
             </div>
           </div>
         </div>
         <Slider
+          setIsAdsShow={setIsAdsShow}
+          handleCurrentVideo={handleCurrentVideo}
           title="You May Also Like"
           link="/all"
           data={data?.liveMatches}

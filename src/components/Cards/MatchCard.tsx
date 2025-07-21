@@ -1,24 +1,27 @@
 import moment from 'moment'
-import { useNavigate } from 'react-router-dom';
-interface itemProps {
-  item : {
-    match_time: number;  
-  match_status: string;
-  home_team_name: string;
-  home_team_logo: string;
-  away_team_name: string;
-  away_team_logo: string;
-  league_name: string;
-  servers: any[];  
-  }
+// import { useNavigate } from 'react-router-dom';
+interface Item  {
+  match_time: number;  
+match_status: string;
+home_team_name: string;
+home_team_logo: string;
+away_team_name: string;
+away_team_logo: string;
+league_name: string;
+servers: any[];  
+}
 
+interface itemProps{
+item: Item,
+setIsAdsShow : (value : boolean)=>void,
+handleCurrentVideo : (item:any , type:string)=>void
 }
 
 
-function MatchCard({item} : itemProps) {
-  const navigate = useNavigate();
 
-   
+function MatchCard({item,setIsAdsShow,handleCurrentVideo} : itemProps) {
+ 
+
   function isUnixTimestamp(value: any): boolean {
     return value > 0 && value.toString().length === 10;
   }
@@ -70,7 +73,7 @@ function MatchCard({item} : itemProps) {
       </div>
 
       {
-          item && item.match_status==='live' ? <div onClick={()=>navigate('/match-details', { state: item })} className=" border p-3 px-8   rounded-full  text-center mt-3 md:mt-6 border-gray-400 font-medium text-gray-300 text-[14px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
+          item && item.match_status==='live' ? <div onClick={()=>{setIsAdsShow(true),handleCurrentVideo(item,'match')}} className=" border p-3 px-8   rounded-full  text-center mt-3 md:mt-6 border-gray-400 font-medium text-gray-300 text-[14px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
           Watch Now
         </div>
         :

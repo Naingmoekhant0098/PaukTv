@@ -8,7 +8,8 @@ import LiveCard from "../../components/Cards/LiveCard";
 import Banner from "../../components/Ads/Banner";
 import BannerMedium from "../../components/Ads/BannerMedium";
 
-function LivePlay() {
+function LivePlay({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void}) {
   const location = useLocation();
   const item = location.state;
   // console.log(item);
@@ -78,14 +79,16 @@ function LivePlay() {
              <BannerMedium />
             <div className=" mt-4 flex flex-col gap-4 ">
               {data &&
-                data.today.slice(0, 3).map((item: any, i: number) => {
-                  return <LiveCard item={item} key={i} />;
+                data.today.slice(0, 2).map((item: any, i: number) => {
+                  return <LiveCard setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} item={item} key={i} />;
                 })}
             </div>
           </div>
         </div>
       </div>
       <Slider
+      setIsAdsShow={setIsAdsShow}
+      handleCurrentVideo={handleCurrentVideo}
         title="You May Also Like"
         link="/all"
         data={data?.liveMatches}

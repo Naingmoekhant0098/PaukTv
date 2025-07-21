@@ -2,7 +2,7 @@ import moment from "moment";
 import { FaCalendarAlt, FaClock } from "react-icons/fa"
 import { MdNavigateNext } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-export default function FootballNewsCard({item} : any) {
+export default function FootballNewsCard({item,setIsAdsShow,handleCurrentVideo} : any) {
     const wordCount = item?.content.trim().split(/\s+/).filter(Boolean).length;
     
     const readMin= Math.ceil(wordCount / 200);
@@ -50,7 +50,9 @@ export default function FootballNewsCard({item} : any) {
               <span>{moment(item?.createdAt).format('LL')}</span>
             </div>
 
-            <div onClick={()=>navigate(`/news-detail/${item?._id}`)}  className=" border p-1.5 px-4  flex flex-row items-center rounded-full  text-center  border-gray-400 text-gray-300 text-[12px] transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
+            <div  
+             onClick={()=>{setIsAdsShow(true),handleCurrentVideo(item?.id,'news')}}
+             className=" border p-1.5 px-4  flex flex-row items-center rounded-full  text-center  border-gray-400 text-gray-300 text-[12px] transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
          Read More <div>
           <MdNavigateNext size={18}/>
          </div>

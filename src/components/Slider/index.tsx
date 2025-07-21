@@ -4,20 +4,25 @@ import LiveCard from "../Cards/LiveCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Link } from "react-router-dom";
-
+// import Ads from "../Ads";
+// 
 interface sliderProps {
   title: string;
   link: string;
   data: any;
   isSwitch :boolean
+  setIsAdsShow : (value : boolean)=>void,
+  handleCurrentVideo : (item:any , type:string)=>void
 }
 
-function Slider({ title, link, data, isSwitch}: sliderProps) {
+function Slider({ title, link, data, isSwitch,setIsAdsShow ,handleCurrentVideo}: sliderProps) {
   
   const [currentSwitch,setCurrentSwitch] = useState('today');
   
 
   return (
+  <>
+   
     <div className=" mx-4 md:mx-10 lg:mx-20 mt-6 md:mt-10">
       <div className=" flex items-center justify-between">
         <div className=" text-xl md:text-2xl font-semibold  tracking-wider uppercase">
@@ -83,23 +88,23 @@ function Slider({ title, link, data, isSwitch}: sliderProps) {
           >
             {!isSwitch && data?.map((item: any,i:number) => (
               <SwiperSlide key={i}>
-                <LiveCard item={item} />
+                <LiveCard item={item} setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} />
               </SwiperSlide>
             ))}
              {isSwitch && currentSwitch==='today' && data?.today?.map((item: any , i : number) => (
               <SwiperSlide key={i}>
-                <LiveCard item={item} />
+              <LiveCard item={item} setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} />
               </SwiperSlide>
             ))}
             {isSwitch && currentSwitch==='tomorrow' && data?.tomorrow?.map((item: any,i:number) => (
               <SwiperSlide key={i}>
-                <LiveCard item={item} />
+               <LiveCard item={item} setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo} />
               </SwiperSlide>
             ))}
           </Swiper>
         }
       </div>
-    </div>
+    </div></>
   );
 }
 

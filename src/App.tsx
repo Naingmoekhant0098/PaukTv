@@ -1,6 +1,6 @@
 // import React from 'react'
 import MainLayout from './components/layouts/MainLayout'
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import LivePlay from './pages/LivePlay';
@@ -11,25 +11,53 @@ import Highlights from './pages/Highlights';
 import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
 import "swiper/css";
+import Ads from './components/Ads';
+import { useState } from 'react';
  
 function App() {
+  const [isShowAd, setIsAdsShow] = useState(false);
+  const [currentSelectedVideo, setCurrentSelectedVideo] = useState();
+  const [currentSelectedType, setCurrentSelectedType] = useState("");
+  const handleCurrentVideo = (item: any, type: string) => {
+    setCurrentSelectedType(type);
+    setCurrentSelectedVideo(item);
+  };
+  const navigate = useNavigate();
+  const handleAdsDone = () => {
+    if (currentSelectedType == "match") {
+      navigate("/match-details", { state: currentSelectedVideo });
+    }else if(currentSelectedType == "highlight"){
+      navigate("/live-match", { state: currentSelectedVideo });
+    }else if(currentSelectedType == "news"){
+      navigate(`/news-detail/${currentSelectedVideo}`)
+    }
+  };
   return (
    <>
+    {isShowAd && (
+        <Ads
+          isShowAd={isShowAd}
+          setIsAdsShow={setIsAdsShow}
+          handleAdsDone={handleAdsDone}
+        />
+      )}
    <ScrollToTop />
     <Routes>
     <Route path="/" element={
       <MainLayout>
-        <Home />
+        <Home  setIsAdsShow={setIsAdsShow} handleCurrentVideo={handleCurrentVideo}/>
       </MainLayout>
     } />
     <Route path="/match-details" element={
       <MainLayout>
-        <Detail />
+        <Detail  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} />
       </MainLayout>
     } />
      <Route path="/live-match" element={
       <MainLayout>
-        <LivePlay />
+        <LivePlay  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} />
       </MainLayout>
     } />
      <Route path="/channel-posts" element={
@@ -39,22 +67,26 @@ function App() {
     } />
      <Route path="/matches" element={
       <MainLayout>
-        <Matches />
+        <Matches  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo}/>
       </MainLayout>
     } />
       <Route path="/highlights" element={
       <MainLayout>
-        <Highlights />
+        <Highlights  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} />
       </MainLayout>
     } />
     <Route path="/news" element={
       <MainLayout>
-        <News />
+        <News setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} />
       </MainLayout>
     } />
      <Route path="/news-detail/:id" element={
       <MainLayout>
-        <NewsDetail />
+        <NewsDetail  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo}/>
       </MainLayout>
     } />
     </Routes>
