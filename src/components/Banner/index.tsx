@@ -14,7 +14,7 @@ function Banner() {
   const nextRef = useRef(null);
   const navigate = useNavigate();
   const { data } = useQuery({
-    queryKey: ["channels"],
+    queryKey: ["slider"],
     queryFn: matcheService.fetchSliderData,
   });
 

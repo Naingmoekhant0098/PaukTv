@@ -7,18 +7,22 @@ import matcheService from "../../services/matcheService";
 // import ImageGallery from '../../components/ImageGallery'
 import NewsSlider from "../../components/Slider/NewsSlider";
 import HighlightSlider from "../../components/Slider/HighlightSlider";
+import Preloader from "../../components/Preloader";
  
 function Home({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
   handleCurrentVideo : (item:any , type:string)=>void}) {
-  const { data } = useQuery({
+  const { data , isLoading } = useQuery({
     queryKey: ["matches"],
     queryFn: matcheService.fetchMatches,
   });
   // const {data:hightlightData,isLoading : hightLightLoading} = useQuery({ queryKey: ['hightLights'], queryFn: matcheService.fetchHighlights })
   const { data: categoryData } = useQuery({
-    queryKey: ["channels"],
+    queryKey: ["channcels"],
     queryFn: matcheService.fetchChannel,
   });
+
+
+
   const { data: newsData } = useQuery({
     queryKey: ["home-news"],
     queryFn: matcheService.fetchNews,
@@ -28,6 +32,10 @@ function Home({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : b
     queryFn: () =>
       matcheService.fetchHighlightsFromYt("football highlights", 10),
   });
+
+  if(isLoading) {
+    return <Preloader />
+  }
 
  
   return (
