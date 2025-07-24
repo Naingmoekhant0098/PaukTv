@@ -1,5 +1,5 @@
 // import React from 'react'
-import { FaDownload } from "react-icons/fa6";
+// import { FaDownload } from "react-icons/fa6";
 import logo from "../../assets/test.png";
 
 export default function Footer() {
