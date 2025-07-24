@@ -180,7 +180,7 @@ function Detail({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value :
           setIsAdsShow={setIsAdsShow}
           handleCurrentVideo={handleCurrentVideo}
           title="You May Also Like"
-          link="/all"
+          link="/matches"
           data={data?.liveMatches}
           isSwitch={false}
         />
