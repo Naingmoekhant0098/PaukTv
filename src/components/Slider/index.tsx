@@ -38,10 +38,10 @@ function Slider({ title, link, data, isSwitch,setIsAdsShow ,handleCurrentVideo}:
           </div>
         </Link>:
         <div className=" border border-gray-500  flex items-center  rounded-full">
-        <div onClick={()=>setCurrentSwitch('today')} className={` text-[13px] p-2 md:p-3  px-4 md:px-6 transition-all duration-300 ${currentSwitch ==='today' && 'bg-amber-500' } rounded-full cursor-pointer`}>
+        <div onClick={()=>setCurrentSwitch('today')} className={` text-[13px] p-2 md:p-3  px-4 md:px-6 transition-all duration-300 ${currentSwitch ==='today' && 'bg-[#E9376E]' } rounded-full cursor-pointer`}>
           Today
         </div>
-        <div onClick={()=>setCurrentSwitch('tomorrow')} className={`transition-all duration-300 text-[13px] p-2 md:p-3  px-4 md:px-6 ${currentSwitch ==='tomorrow' && 'bg-amber-500' } rounded-full cursor-pointer`}>
+        <div onClick={()=>setCurrentSwitch('tomorrow')} className={`transition-all duration-300 text-[13px] p-2 md:p-3  px-4 md:px-6 ${currentSwitch ==='tomorrow' && 'bg-[#E9376E]' } rounded-full cursor-pointer`}>
           Tomorrow
         </div>
           </div>

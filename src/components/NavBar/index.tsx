@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/test.png";
 import { FaBars } from "react-icons/fa6";
 import Drawer from "react-modern-drawer";
 import { RxCross2 } from "react-icons/rx";
@@ -38,13 +38,14 @@ function NavBar() {
 
   return (
     <div className="">
-      <div className={`navBar flex items-center  transition-all duration-300 fixed left-0 right-0 to-0 z-50  justify-between p-1 px-3 md:px-12 ${showNavbar}`}>
-        <Link to={'/'} className="logo">
+      <div className={`navBar flex items-center  transition-all duration-300 fixed left-0 right-0 to-0 z-50  justify-between p-3 px-3 md:px-12 ${showNavbar}`}>
+        <Link to={'/'} className="logo  aspect-square">
           <img
             src={logo}
             alt="logo not found"
-            className=" w-18 md:w-24 h-18 md:h-24"
+            className=" w-16 md:w-18 h-16 md:h-18  object-cover"
           />
+          {/* <div className=" font-semibold text-[#E9376E] text-center ">Boss Tv</div> */}
         </Link>
 
         <div className=" block md:hidden lg:hidden" onClick={toggleDrawer}>
@@ -82,9 +83,7 @@ function NavBar() {
             <Link  onClick={()=>setIsOpen(false)} to={'/highlights'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <LuListTodo size={24} />
             <div className=" text-[14px] font-medium">
             Highlights</div></Link>
-            {/* <Link  onClick={()=>setIsOpen(false)} to={'/channels'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <MdLiveTv size={24} />
-            <div className=" text-[14px] font-medium">
-            Channels</div></Link> */}
+            
            
             <Link  onClick={()=>setIsOpen(false)} to={'/news'}  className=" flex items-center gap-3 transition-all duration-300 hover:text-[#F65311]"> <BsNewspaper size={24} />  <div className=" text-[14px] font-medium">
             News</div></Link>

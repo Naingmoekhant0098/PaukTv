@@ -8,6 +8,7 @@ import matcheService from "../../services/matcheService";
 import NewsSlider from "../../components/Slider/NewsSlider";
 import HighlightSlider from "../../components/Slider/HighlightSlider";
 import Preloader from "../../components/Preloader";
+import Promote from "../../components/Promote";
  
 function Home({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : boolean)=>void,
   handleCurrentVideo : (item:any , type:string)=>void}) {
@@ -71,6 +72,7 @@ function Home({setIsAdsShow  ,handleCurrentVideo} : {  setIsAdsShow : (value : b
         link="/highlights"
         data={hightlightData}
       />
+      <Promote />
       <NewsSlider
         setIsAdsShow={setIsAdsShow}
         handleCurrentVideo={handleCurrentVideo}

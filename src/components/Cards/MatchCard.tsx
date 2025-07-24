@@ -73,7 +73,7 @@ function MatchCard({item,setIsAdsShow,handleCurrentVideo} : itemProps) {
       </div>
 
       {
-          item && item.match_status==='live' ? <div onClick={()=>{setIsAdsShow(true),handleCurrentVideo(item,'match')}} className=" border p-3 px-8   rounded-full  text-center mt-3 md:mt-6 border-gray-400 font-medium text-gray-300 text-[14px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] ">
+          item && item.match_status==='live' ? <div onClick={()=>{setIsAdsShow(true),handleCurrentVideo(item,'match')}} className=" border p-3 px-8   rounded-full  text-center mt-3 md:mt-6 border-gray-400 font-medium text-gray-300 text-[14px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#E9376E] hover:bg-[#E9376E] ">
           Watch Now
         </div>
         :

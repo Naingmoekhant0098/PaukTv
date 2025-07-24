@@ -47,7 +47,7 @@ const navigate = useNavigate();
 
         <button
         onClick={()=>navigate('/live-match', { state: {name : item?.name , id : item?._id , stream_url : item?.stream_url , isChannel : true  } })}
-         className=" border py-3 px-8  w-full  rounded-full  text-center   border-gray-400 text-gray-300 text-[13px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#F65311] hover:bg-[#F65311] "
+         className=" border py-3 px-8  w-full  rounded-full  text-center   border-gray-400 text-gray-300 text-[13px] md:text-[14px]  transition-all duration-500 cursor-pointer hover:border-[#E9376E] hover:bg-[#E9376E] "
         >
           Watch Now
         </button>

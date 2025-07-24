@@ -48,8 +48,9 @@ body{
  
 
 .nav:hover {
-  color: #F65311;
+  color: #E9376E;
 }
+
 
 .nav::after {
   content: "";
@@ -61,7 +62,7 @@ body{
   transform: translateX(-50%);
   width: 0;
   height: 4px;
-  background: red;
+  background: #E9376E;
   border-radius: 10px;
   transition: width 0.3s ease;
 }

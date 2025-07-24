@@ -20,7 +20,7 @@ interface sliderProps {
 function HighlightSlider({ title, link, data,setIsAdsShow,handleCurrentVideo}: sliderProps) {
   
    
-  
+  console.log(title , data)
 
   return (
     <div className=" mx-4 md:mx-10 lg:mx-20 mt-6 md:mt-10">
@@ -44,7 +44,7 @@ function HighlightSlider({ title, link, data,setIsAdsShow,handleCurrentVideo}: s
       <div className=" mt-4  relative">
         <div  className="hidden md:block absolute top-0  right-0 z-40 h-full w-10 bg-gradient-to-r from-transparent to-[#01152B]"></div>
        {
-     data?.length === 0 && <div>Matches Not Found !</div>
+     data?.length == 0 || data==undefined && <div>Highlights Not Found !</div>
        }
         
         {

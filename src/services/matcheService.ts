@@ -109,5 +109,19 @@ export default {
         } catch (error) {
           console.log(error)
   
-        }}
+          
+        }},
+        fetchVersion : async()=>{
+
+          try {
+            const response = await api.get(`/version`);
+            return response.data
+          } catch (error) {
+            console.log(error)
+    
+            
+          }}
+
+
+       
 }
