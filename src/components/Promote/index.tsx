@@ -54,7 +54,7 @@ function Promote() {
                           rel="noopener noreferrer"
                            className="group flex items-center justify-center gap-3 border-2 border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 md:py-4 rounded-xl text-white text-sm md:text-base font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg"
                         >
-{/* bg-[#E9376E] */}
+ 
                           <img src={playStore} className="w-6 h-6 md:w-8 md:h-8 fill-current" />
                           <div className="text-left">
                             <div className="text-xs opacity-90">Get it on</div>

@@ -6,12 +6,11 @@ import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
 import { useRef } from "react";
 import { GrNext, GrPrevious } from "react-icons/gr";
-// import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import matcheService from "../../services/matcheService";
 import phones from "../../assets/images/phone.png";
 import playStore from "../../assets/images/playstore.png";
-// import { FaPlay } from "react-icons/fa6";
+ 
 import { FaDownload } from "react-icons/fa";
 function Banner() {
   const prevRef = useRef(null);
