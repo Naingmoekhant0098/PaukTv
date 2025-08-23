@@ -13,6 +13,7 @@ import NewsDetail from './pages/NewsDetail';
 import "swiper/css";
 import Ads from './components/Ads';
 import { useState } from 'react';
+import YoutubePlay from './pages/YoutubePlay';
  
 function App() {
   const [isShowAd, setIsAdsShow] = useState(false);
@@ -27,10 +28,11 @@ function App() {
     if (currentSelectedType == "match") {
       navigate("/match-details", { state: currentSelectedVideo });
     }else if(currentSelectedType == "highlight"){
-      navigate("/live-match", { state: currentSelectedVideo });
+      navigate("/youtube-play", { state: currentSelectedVideo });
     }else if(currentSelectedType == "news"){
       navigate(`/news-detail/${currentSelectedVideo}`)
     }
+   
   };
   return (
    <>
@@ -57,6 +59,12 @@ function App() {
      <Route path="/live-match" element={
       <MainLayout>
         <LivePlay  setIsAdsShow={setIsAdsShow}
+             handleCurrentVideo={handleCurrentVideo} />
+      </MainLayout>
+    } />
+     <Route path="/youtube-play" element={
+      <MainLayout>
+        <YoutubePlay  setIsAdsShow={setIsAdsShow}
              handleCurrentVideo={handleCurrentVideo} />
       </MainLayout>
     } />

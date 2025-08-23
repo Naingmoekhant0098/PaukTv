@@ -7,10 +7,10 @@ import matcheService from "../../services/matcheService";
 import LiveCard from "../../components/Cards/LiveCard";
 import Banner from "../../components/Ads/Banner";
 import BannerMedium from "../../components/Ads/BannerMedium";
-import ReactPlayer from "react-player";
+
 import HlsStrictPlayer from "../../components/Player";
 
-function LivePlay({
+function YoutubePlay({
   setIsAdsShow,
   handleCurrentVideo,
 }: {
@@ -68,7 +68,7 @@ function LivePlay({
         <div className=" grid grid-cols-1 mt-10 md:mt-6 md:grid-cols-3 gap-5">
           <div className=" col-span-2">
             
-            {/* <iframe
+            <iframe
               width="100%"
               height=""
               src={item.stream_url}
@@ -78,10 +78,8 @@ function LivePlay({
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen={true}
-            ></iframe> */}
-            <div className="w-full h-[250px] md:h-[500px] -mt-2">
-            <HlsStrictPlayer src={item.stream_url} muted={true} autoPlay={true} />
-            </div>
+            ></iframe>
+           
             {/* <iframe width='640' height='400' src='https://hoofootay4.spotlightmoment.com/embed/efit2uZDhn0CN' ></iframe> */}
             <Banner />
           </div>
@@ -115,4 +113,4 @@ function LivePlay({
   );
 }
 
-export default LivePlay;
+export default YoutubePlay;

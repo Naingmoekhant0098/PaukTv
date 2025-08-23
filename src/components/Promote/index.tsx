@@ -11,7 +11,7 @@ function Promote() {
   });
   
   return (
-   <div className=' flex justify-around bg-slate-950 py-12 md:py-4 md:h-[70vh] my-4'>
+   <div className=' flex justify-around bg-slate-950 py-12 md:py-4 md:h-[70vh] my-10'>
      <div className=" mx-4 md:mx-10 lg:mx-20 mt-6 md:mt-10 ">
         
         <div className="w-full   flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
